@@ -15,26 +15,12 @@ print("Starting backup of database " + db)
 
 command = "mongodump -d Equipment"
 os.system(command)
-gitinitcmd = "git init"
-os.system(gitinitcmd)
 
-cdcmd = "cd dump"
-os.system(cdcmd)
-
-#gitinitcmd = "git init"
-#os.system(gitinitcmd)
-
-gitaddcmd = "git add -A"
+gitaddcmd = "git add ."
 os.system(gitaddcmd)
 
 gitcommitcmd = "git commit -m 'backup for " + DATETIME + "'"
 os.system(gitcommitcmd)
-
-#gitbranchcmd = "git branch -M master"
-#os.system(gitbranchcmd)
-
-#gitremotecmd = "git remote add origin git@github.com:EverlaststingRolich/erudite_backup.git"
-#os.system(gitremotecmd)
 
 gitpushcmd = "git push origin master"
 os.system(gitpushcmd)
